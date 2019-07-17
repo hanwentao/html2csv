@@ -1,9 +1,9 @@
-import setuptools
+from setuptools import setup, find_packages
 
 with open('README.md') as readme_file:
     long_description = readme_file.read()
 
-setuptools.setup(
+setup(
     name='html2csv',
     version='0.0.1',
     description='A utility that extracts tables from html documents and converts them to csv format',
@@ -20,7 +20,7 @@ setuptools.setup(
         'Programming Language :: Python :: 3.7',
     ],
     keywords='html table csv convert',
-    packages=['html2csv'],
+    packages=find_packages(exclude=['tests']),
     python_requires='>=3.7',
     install_requires=['beautifulsoup4', 'lxml'],
     entry_points={
