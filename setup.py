@@ -4,7 +4,7 @@ with open('README.md') as readme_file:
     long_description = readme_file.read()
 
 setup(
-    name='htmltable2csv',
+    name='htmltocsv',
     version='0.0.1',
     description='A utility that extracts tables from html documents and converts them to csv format',
     long_description=long_description,
