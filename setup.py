@@ -6,16 +6,26 @@ with open('README.md') as readme_file:
 setuptools.setup(
     name='html2csv',
     version='0.0.1',
-    author='Wentao Han',
-    author_email='wentao.han@gmail.com',
     description='A utility that extracts tables from html documents and converts them to csv format',
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/hanwentao/html2csv',
-    packages=setuptools.find_packages(),
+    author='Wentao Han',
+    author_email='wentao.han@gmail.com',
     classifiers=[
-        'Programming Language :: Python :: 3',
-        'License :: OSI Approved :: MIT License',
+        'Development Status :: 3 - Alpha',
         'Operating System :: OS Independent',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.7',
     ],
+    keywords='html table csv convert',
+    packages=['html2csv'],
+    python_requires='>=3.7',
+    install_requires=['beautifulsoup4', 'lxml'],
+    entry_points={
+        'console_scripts': [
+            'html2csv=html2csv.__main__:main',
+        ],
+    },
 )
