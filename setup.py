@@ -5,7 +5,7 @@ with open('README.md') as readme_file:
 
 setup(
     name='html-to-csv',
-    version='0.0.3.post1',
+    version='0.1.0',
     description='A utility that extracts tables from HTML documents and converts them to CSV format',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -22,7 +22,7 @@ setup(
     keywords='html table csv convert',
     packages=find_packages(exclude=['tests']),
     python_requires='>=3.7',
-    install_requires=['beautifulsoup4', 'lxml'],
+    install_requires=['beautifulsoup4', 'lxml', 'requests'],
     entry_points={
         'console_scripts': [
             'html2csv=html2csv.__main__:main',

@@ -1,19 +1,21 @@
 import argparse
+import pathlib
 import sys
+
+import requests
 
 from . import Converter
 
 
 def main():
     parser = argparse.ArgumentParser(description='Convert HTML table to CSV format.')
-    parser.add_argument('input_file',
-        help='input files (default: standard input)',
+    parser.add_argument('input',
+        help='input sources (files, URLs, etc., default: standard input)',
         nargs='*',
-        type=argparse.FileType('r'),
-        default=[sys.stdin],
+        default=['-'],
     )
-    parser.add_argument('-o', '--output-file',
-        help='output file (default: standard output)',
+    parser.add_argument('-o', '--output',
+        help='output target (default: standard output)',
         nargs='?',
         type=argparse.FileType('w'),
         default=sys.stdout,
@@ -23,10 +25,19 @@ def main():
     )
     args = parser.parse_args()
     converter = Converter(**vars(args))
-    for input_file in args.input_file:
-        output = converter.convert(input_file.read())
+    for input_source in args.input:
+        if not input_source or input_source == '-':
+            html_doc = sys.stdin.read()
+        else:
+            path = pathlib.Path(input_source)
+            if path.exists():
+                html_doc = path.read_text()
+            else:
+                response = requests.get(input_source)
+                html_doc = response.text
+        output = converter.convert(html_doc)
         for csv_string, _ in output:
-            args.output_file.write(csv_string)
+            args.output.write(csv_string)
 
 
 if __name__ == '__main__':
