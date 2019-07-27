@@ -4,10 +4,24 @@ import io
 import bs4
 
 
+def detect_engine():
+    try:
+        import lxml
+    except ImportError:
+        engine = 'html.parser'
+    else:
+        engine = 'lxml'
+    return engine
+
+
 class Converter:
 
-    def __init__(self, engine='lxml', **kwargs):
-        self.engine = engine
+    def __init__(self, **kwargs):
+        engine = kwargs.get('engine')
+        if engine is None:
+            self.engine = detect_engine()
+        else:
+            self.engine = engine
         self.params = kwargs
 
     def convert(self, html_doc):
