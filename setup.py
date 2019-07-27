@@ -5,7 +5,7 @@ with open('README.md') as readme_file:
 
 setup(
     name='html-to-csv',
-    version='0.1.0',
+    version='0.1.1',
     description='A utility that extracts tables from HTML documents and converts them to CSV format',
     long_description=long_description,
     long_description_content_type='text/markdown',
