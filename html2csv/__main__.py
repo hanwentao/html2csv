@@ -4,7 +4,7 @@ import sys
 
 import requests
 
-from . import Converter
+from . import Converter, __version__
 
 
 def main():
@@ -23,7 +23,14 @@ def main():
     parser.add_argument('-e', '--engine',
         help='HTML parser engine (default: html.parser or lxml if installed)',
     )
+    parser.add_argument('-V', '--version',
+        action='store_true',
+        help='display version',
+    )
     args = parser.parse_args()
+    if args.version:
+        print(f'{__package__} {__version__}')
+        return
     converter = Converter(**vars(args))
     for input_source in args.input:
         if not input_source or input_source == '-':

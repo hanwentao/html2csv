@@ -15,7 +15,7 @@ Yes, the package name is `html-to-csv` due to collision ;-)
 ## Usage
 
 ```
-usage: html2csv [-h] [-o [OUTPUT]] [-e ENGINE] [input [input ...]]
+usage: html2csv [-h] [-o [OUTPUT]] [-e ENGINE] [-V] [input [input ...]]
 
 Convert HTML table to CSV format.
 
@@ -30,6 +30,7 @@ optional arguments:
   -e ENGINE, --engine ENGINE
                         HTML parser engine (default: html.parser or lxml if
                         installed)
+  -V, --version         display version
 ```
 
 ## Author and Contact

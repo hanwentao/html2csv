@@ -1,11 +1,14 @@
+import pathlib
 from setuptools import setup, find_packages
 
-with open('README.md') as readme_file:
-    long_description = readme_file.read()
+here = pathlib.Path(__file__).parent
+long_description = (here / 'README.md').read_text()
+about = {}
+exec((here / 'html2csv' / 'version.py').read_text(), about)
 
 setup(
     name='html-to-csv',
-    version='0.1.2',
+    version=about['__version__'],
     description='A utility that extracts tables from HTML documents and converts them to CSV format',
     long_description=long_description,
     long_description_content_type='text/markdown',
