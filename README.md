@@ -4,7 +4,7 @@
 
 ## Setup
 
-Install `html2csv` by `pip`.
+Python 3 is required (version >=3.6).  Install `html2csv` by `pip`.
 
 ```
 pip install html-to-csv
