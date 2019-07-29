@@ -2,6 +2,8 @@
 
 `html2csv` is a utility that extracts tables from HTML documents and converts them to CSV format, written in Python.
 
+[![asciicast](https://asciinema.org/a/259747.svg)](https://asciinema.org/a/259747)
+
 ## Setup
 
 Python 3 is required (version >=3.6).  Install `html2csv` by `pip`.
