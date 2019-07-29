@@ -24,6 +24,10 @@ setup(
     packages=find_packages(exclude=['tests']),
     python_requires='>=3.6, <4',
     install_requires=['beautifulsoup4', 'lxml', 'requests'],
+    extras_require={
+        'dev': ['setuptools', 'wheel', 'twine'],
+        'test': ['tox'],
+    },
     entry_points={
         'console_scripts': [
             'html2csv=html2csv.__main__:main',
