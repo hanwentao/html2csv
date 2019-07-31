@@ -1,5 +1,7 @@
 # html2csv
 
+[![Build Status](https://travis-ci.com/hanwentao/html2csv.svg?branch=master)](https://travis-ci.com/hanwentao/html2csv)
+
 `html2csv` is a utility that extracts tables from HTML documents and converts them to CSV format, written in Python.
 
 [![asciicast](https://asciinema.org/a/259747.svg)](https://asciinema.org/a/259747)
