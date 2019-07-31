@@ -14,6 +14,24 @@ pip install html-to-csv
 
 Yes, the package name is `html-to-csv` due to collision ;-)
 
+## Examples
+
+Input from the standard input, and output to the standard output.
+
+    html2csv
+
+Input from a file, and output to the standard output.
+
+    html2csv example.html
+
+Input from files, and output to a file.
+
+    html2csv example1.html example2.html -o output.csv
+
+Input from the network, and output to the standard output.
+
+    html2csv http://example.com
+
 ## Usage
 
 ```
