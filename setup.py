@@ -29,7 +29,7 @@ setup(
     install_requires=['beautifulsoup4', 'lxml', 'requests'],
     extras_require={
         'dev': ['setuptools', 'wheel', 'twine'],
-        'test': ['tox'],
+        'test': ['pytest', 'tox'],
     },
     entry_points={
         'console_scripts': [
