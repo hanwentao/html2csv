@@ -27,9 +27,9 @@ class Converter:
     def convert_to_list(self, html_doc):
         soup = bs4.BeautifulSoup(html_doc, self.engine)
         tables = []
-        for table in soup.find_all('table'):
+        for table_element in soup.find_all('table'):
             table = []
-            for tr in table.find_all('tr'):
+            for tr in table_element.find_all('tr'):
                 row = [''.join(cell.stripped_strings)
                        for cell in tr.find_all(['td', 'th'])]
                 table.append(row)
