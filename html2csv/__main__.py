@@ -38,7 +38,8 @@ def main():
         else:
             path = pathlib.Path(input_source)
             if path.exists():
-                html_doc = path.read_text()
+                with open(path, 'rb') as f:
+                    html_doc = f.read()
             else:
                 response = requests.get(input_source)
                 html_doc = response.text
